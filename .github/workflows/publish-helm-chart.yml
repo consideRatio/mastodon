@@ -28,7 +28,7 @@ jobs:
 
       - name: Update chart dependencies
         run: |
-          helm repo add randomurl https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+          helm repo add jupyterhub https://jupyterhub.github.io/helm-chart
           helm dependency update charts/mastodon
 
       - name: Run chart-releaser
