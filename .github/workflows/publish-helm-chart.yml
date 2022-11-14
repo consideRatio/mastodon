@@ -8,8 +8,6 @@ concurrency: release-helm
 on:
   workflow_dispatch:
   push:
-    branches:
-      - 'main'
 
 jobs:
   release:
@@ -30,11 +28,10 @@ jobs:
 
       - name: Update chart dependencies
         run: |
-          helm repo add bitnami https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
           helm dependency update charts/mastodon
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.4.1
         env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CR_TOKEN: "asdklfjalkdsf"
           CR_SKIP_EXISTING: "true"  # if a release already exists for the version, don't try to upload it again
